@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Chest X-Ray Pneumonia Detection Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="" class="logo">
+                    <img src="static/logo.png" alt="">
+                    <nav>
+                        <a href="" class="btn btn1">HOME</a>
+                        <a href="{{url_for('page')}}" class="btn btn1" target="_blank">ABOUT</a>
+                    </nav>
+                </a>
+            </div>
+            <div class="content">
+                <h1 class="h-title">Chest X-Ray<br>Pneumonia<br>Detection</h1>
+                <a href="https://www.bumrungrad.com/th/conditions/pneumonitis" target="_blank">
+                <button class="btn btn1">Learn More</button>
+                </a>
+                <a href="#A0">
+                    <button class="check">Check</button>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        {% block content %}
+        {% endblock %}
+        <div class="container">
+            <div class="alert alert-danger mt-5" role="alert">
+                This project is for educational purposes only
+            </div>
+
+
+
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+    </header>
+    
+            
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Archivo', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: var(--pr-color);
+        }
+
+        * a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        button {
+            border: none;
+            background: none;
+        }
+
+        :root {
+            --pr-color: #40E0D0;
+            --sn-color: #C3CBEA;
+            --bg-color: #C3CBEA;
+            --fr-color: #013C4A;
+            --white: #fff;
+            --blue: #3498ab;
+        }
+
+        body {
+
+            background-image: url('static/N.png');
+            background-repeat: no-repeat;
+        }
+
+        header {
+            background-image: url('static/N.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            z-index: 1;
+        }
+
+        .navbar .logo {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .navbar .logo img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        .navbar nav a {
+            margin-left: 48px;
+        }
+
+        .btn {
+            border: 1px solid #3498ab;
+            background: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.8s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn1 {
+            color: #3498ab;
+        }
+
+        .btn1:hover {
+            color: #fff;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: #3498ab;
+            z-index: -1;
+            transition: 0.8s;
+        }
+
+        .btn1::before {
+            top: 0;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .btn1:hover::before {
+            height: 200%;
+        }
+
+        .btnbtn-primaryml-3 {
+            color: #000;
+        }
+
+        .btnbtn-primaryml-3 {
+            background-color: #7fd9f0;
+            border: 1px solid #3498ab;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.8s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btnbtn-primaryml-3:hover {
+            color: #fff;
+        }
+
+        .btnbtn-primaryml-3::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: #3498ab;
+            z-index: -1;
+            transition: 0.8s;
+        }
+
+        .btnbtn-primaryml-3::before {
+            top: 0;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .btnbtn-primaryml-3:hover::before {
+            height: 200%;
+        }
+
+        .h-title {
+            font-family: 'archivo', sans-serif;
+            font-family: 'poppins', sans-serif;
+        }
+
+        header .content h1 {
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 50px;
+        }
+
+        header .content button {
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        header .content {
+            margin-top: 90px;
+        }
+
+        u {
+            color: #fff;
+            font-family: 'Itim', sans-serif;
+            text-align: center;
+        }
+        blockquote {
+            color: #fff;
+            font-family: 'Itim', sans-serif;
+            border: none solid #3498ab;
+            padding: 10px 200px;
+        }
+        li {
+            color: #fff;
+            font-family: 'Itim', sans-serif;
+            text-align:left
+        }
+        ul {
+            color: #fff;
+            font-family: 'Itim', sans-serif;
+        }
+        i  {
+            color: #ff9e37;
+            font-family: 'Itim', sans-serif;
+        }
+        b  {
+            color: #fc2525;
+        }
+    </style>
+
+</body>
+
+</html>
